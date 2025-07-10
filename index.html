@@ -1,114 +1,378 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Hens-Car</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Hens-Car - Marketplace de Carros Premium</title>
 </head>
-
 <body>
-    <header>
-        <img src="./img/hens-car.png" alt="logo HensCar">
-        <nav>
-            <!--representa uma seção de uma página cujo objetivo é fornecer links de navegação, seja dentro do documento atual ou para outros documentos. -->
-            <ul>
-                <li>Home</li>
-                <li>Carros</li>
-                <li>Fale conosco</li>
-            </ul>
-        </nav>
-        <!--Não é necessário que todos os links estejam contidos em um <nav>elemento. <nav>destina-se apenas a um grande bloco de links de navegação.-->
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./img/hens-car.png" alt="Hens-Car Logo">
+                    <span>Hens-Car</span>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#inventory" class="nav-link">Estoque</a></li>
+                        <li><a href="#services" class="nav-link">Serviços</a></li>
+                        <li><a href="#about" class="nav-link">Sobre</a></li>
+                        <li><a href="#contact" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="favorites-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <section class="container">
-        <div class="list">
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <button class="search-close" id="searchClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="search-form">
+                <input type="text" placeholder="Buscar por marca, modelo ou ano..." class="search-input">
+                <button class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
-            <div class="item active">
-                <div class="car-img">
-                    <img src="./img/1.png" alt="img-Porsche">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Encontre o Carro dos Seus
+                        <span class="highlight">Sonhos</span>
+                    </h1>
+                    <p class="hero-description">
+                        Marketplace premium com os melhores carros esportivos e de luxo. 
+                        Qualidade garantida e experiência excepcional.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Carros Premium</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfação</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary">Ver Estoque</button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-play"></i>
+                            Assistir Vídeo
+                        </button>
+                    </div>
                 </div>
-                <div class="content">
-                    <p class="car-inf">
-                        2024 - 640 Cavalos/P
-                    </p>
-                    <h2>
-                        Porsche 911 Turbo S
-                    </h2>
-                    <p class="description">
-                        O Porsche 911 Turbo S | é um carro esportivo de alto desempenho que combina luxo, tecnologia avançada e uma dinâmica de condução excepcional. É projetado para aqueles que buscam a melhor experiência de condução, seja em pistas de corrida ou nas estradas do dia a dia. Com sua aceleração impressionante, velocidade máxima elevada e design icônico, o 911 Turbo S continua a ser uma referência entre os carros esportivos de elite.
-                    </p>
-                    <button class="information">
-                        Saiba mais
-                    </button>
-                </div><!--content-->
-            </div><!--item-->
-
-            <div class="item">
-                <div class="car-img">
-                    <img src="./img/2.png" alt="img-Ferrari">
+                <div class="hero-car">
+                    <img src="./img/1.png" alt="Porsche 911 Turbo S" class="hero-car-image">
+                    <div class="car-info-card">
+                        <h3>Porsche 911 Turbo S</h3>
+                        <p>2024 • 640 CV • Automático</p>
+                        <div class="price">R$ 1.890.000</div>
+                    </div>
                 </div>
-                <div class="content">
-                    <p class="car-inf">
-                        2020 - Conversível
-                    </p>
-                    <h2>
-                        Ferrari Portofino
-                    </h2>
-                    <p class="description">
-                        A Ferrari Portofino | é um exemplo de excelência italiana no mundo dos supercarros conversíveis, combinando estilo sofisticado, desempenho excepcional e tecnologia avançada para oferecer uma experiência de condução emocionante e luxuosa. A Portofino apresenta um design aerodinâmico e fluído, com linhas que combinam elegância e agressividade típicas da Ferrari.
-                    </p>
-                    <button class="information">
-                        Saiba mais
-                    </button>
-                </div><!--content-->
-            </div><!--item-->
-
-            <div class="item">
-                <div class="car-img">
-                    <img src="./img/3.png" alt="img-Lamborghini">
-                </div>
-                <div class="content">
-                    <p class="car-inf">
-                        2022 - VM: 350 km/h 
-                    </p>
-                    <h2>
-                        Lamborghini Aventador S
-                    </h2>
-                    <p class="description">
-                        A Lamborghini Aventador S | é uma obra-prima da engenharia automotiva e um ícone de design e desempenho. Lamborghini Aventador S não é apenas um carro esportivo, mas uma obra de arte sobre rodas que combina desempenho extremo com um design icônico e luxuoso.A direção é precisa e responsiva, proporcionando uma sensação de controle total sobre a estrada.A dianteira é dominada por entradas de ar enormes e faróis afilados, dando-lhe uma aparência predatória.
-                    </p>
-                    <button class="information">
-                        Saiba mais
-                    </button>
-                </div><!--content-->
-            </div><!--item-->
-
-        </div><!--list-->
-
-        <div class="arrows">
-            <button id="prev"><img src="./img/arrow.png" alt="seta-direita"></button>
-            <button id="next"><img src="./img/arrow.png" alt="seta-esquerda"></button>
-        </div><!--arrows-->
-
-        <div class="indcators">
-            <div class="number">01</div>
-            <ul>
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div><!--indcators-->
+            </div>
+        </div>
     </section>
 
-    <script src="script.js"></script>
-</body>
+    <!-- Filter Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">Todos</button>
+                <button class="filter-tab" data-filter="sports">Esportivos</button>
+                <button class="filter-tab" data-filter="luxury">Luxo</button>
+                <button class="filter-tab" data-filter="suv">SUV</button>
+                <button class="filter-tab" data-filter="electric">Elétricos</button>
+            </div>
+            
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option value="">Marca</option>
+                        <option value="porsche">Porsche</option>
+                        <option value="ferrari">Ferrari</option>
+                        <option value="lamborghini">Lamborghini</option>
+                        <option value="mclaren">McLaren</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option value="">Preço</option>
+                        <option value="0-500000">Até R$ 500.000</option>
+                        <option value="500000-1000000">R$ 500.000 - R$ 1.000.000</option>
+                        <option value="1000000+">Acima de R$ 1.000.000</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option value="">Ano</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                </div>
+                <button class="filter-reset">Limpar Filtros</button>
+            </div>
+        </div>
+    </section>
 
+    <!-- Inventory Section -->
+    <section class="inventory" id="inventory">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nosso Estoque Premium</h2>
+                <p class="section-description">Carros cuidadosamente selecionados para oferecer a melhor experiência</p>
+            </div>
+
+            <div class="inventory-grid" id="inventoryGrid">
+                <!-- Car cards will be dynamically generated -->
+            </div>
+
+            <div class="load-more">
+                <button class="btn btn-outline" id="loadMoreBtn">Carregar Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <p class="section-description">Experiência completa do início ao fim</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Venda de Veículos</h3>
+                    <p>Carros premium selecionados com garantia e procedência</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Manutenção Especializada</h3>
+                    <p>Oficina especializada em carros de luxo e esportivos</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Financiamento</h3>
+                    <p>Condições especiais e parcerias com os melhores bancos</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Garantia Estendida</h3>
+                    <p>Proteção completa para seu investimento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre a Hens-Car</h2>
+                    <p>Com mais de 15 anos de experiência no mercado de carros premium, a Hens-Car se estabeleceu como referência em qualidade e confiança.</p>
+                    <p>Nossa paixão por automóveis excepcionais nos levou a criar um marketplace único, onde cada veículo é cuidadosamente selecionado e inspecionado.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Inspeção rigorosa de qualidade</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Garantia em todos os veículos</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Atendimento personalizado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Showroom Hens-Car">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p>Estamos prontos para ajudar você a encontrar o carro perfeito</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>(11) 99999-9999</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contato@henscar.com.br</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Av. Paulista, 1000 - São Paulo, SP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Seu telefone">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="./img/hens-car.png" alt="Hens-Car Logo">
+                        <span>Hens-Car</span>
+                    </div>
+                    <p>Marketplace premium de carros esportivos e de luxo. Qualidade e confiança há mais de 15 anos.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#inventory">Estoque</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Venda de Veículos</a></li>
+                        <li><a href="#">Manutenção</a></li>
+                        <li><a href="#">Financiamento</a></li>
+                        <li><a href="#">Garantia</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-envelope"></i> contato@henscar.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - SP</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hens-Car. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Car Detail Modal -->
+    <div class="car-modal" id="carModal">
+        <div class="car-modal-content">
+            <button class="car-modal-close" id="carModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="car-modal-body" id="carModalBody">
+                <!-- Content will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
